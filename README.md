@@ -4,3 +4,5 @@
 ## 활용
 1. npm & yarn install ==> "yarn" 이 더 빠름
 2. yarn global add bower = bower 설치
+
+수정중일세~~
