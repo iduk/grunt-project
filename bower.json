@@ -1,0 +1,29 @@
+{
+  "name": "atom-engineering",
+  "description": "",
+  "main": "src/index.html",
+  "authors": [
+    "iduk <iduk.design@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "http://",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.2.1",
+    "fontawesome": "^5.6.3"
+  },
+  "devDependencies": {
+    "select2": "~4.0",
+    "modernizr": "^3.6.0",
+    "jquery-easing": "*",
+    "dropzone": "dropzonejs#^4.3.0"
+  }
+}
