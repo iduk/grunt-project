@@ -144,26 +144,26 @@ module.exports = function (grunt) {
 		// 		dest: 'dist/js/main.js'
 		// 	}
 		// },
+		
+		
+		// Jshint 자바스크립트 검사
+		jshint: {
+			files: ['Gruntfile.js', 'src/**/*.js', '!**/*.min.js'],
+			options: {
+				reporter: require('jshint-stylish')
+			}
+		},
 
 
 		// uglify, JS 파일 최적화
 		uglify: {
 			compress: {
 				files: {
-					'dist/js/script.min.js': ['src/js/main.js', 'src/js/scrollTop.js']
+					'dist/js/script.min.js': ['src/js/scrollSpy.js', 'src/js/scrollTop.js', 'src/js/modules.js']
 				}
 			},
 			options: {
 				mangle: false
-			}
-		},
-
-
-		// Jshint 자바스크립트 검사
-		jshint: {
-			files: ['Gruntfile.js', '**/*.js', '!**/*.min.js'],
-			options: {
-				reporter: require('jshint-stylish')
 			}
 		},
 
@@ -197,8 +197,8 @@ module.exports = function (grunt) {
 				tasks: ['postcss', 'cssmin']
 			},
 			js: {
-				files: ['Gruntfile.js', '**/*.js'],
-				tasks: ['jshint']
+				files: ['Gruntfile.js', 'src/**/*.js', 'dist/**/*.js'],
+				tasks: ['jshint:files', 'uglyfy']
 			},
 			html: {
 				files: ['**/*.html'],
@@ -225,6 +225,6 @@ module.exports = function (grunt) {
 
 	// grunt 명령어로 실행할 작업
 	grunt.registerTask('include', ['includereplace', 'watch']);
-	grunt.registerTask('build', ['imagemin', 'sass', 'postcss', 'cssmin', 'uglify', 'jshint:files', 'includereplace', 'watch']);
+	grunt.registerTask('build', ['imagemin', 'sass', 'postcss', 'cssmin', 'jshint:files', 'uglify', 'includereplace', 'watch']);
 
 };

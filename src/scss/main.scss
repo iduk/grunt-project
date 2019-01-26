@@ -3,7 +3,7 @@ $enable-grid-classes:true;
 // replace colors
 $theme-colors: ("primary": #51b1ff, "warning": #ebe726, "danger": #F67280, "dark": #151629, "light": #f7faff, );
 // Include all of Bootstrap
-@import "../../components/bootstrap/scss/bootstrap";
+@import "../../bower_components/bootstrap/scss/bootstrap";
 // 여기부터 색상은 기존 부트스트랩 색상으로 먹힌다. 원인찾기! //
 /**
  *
