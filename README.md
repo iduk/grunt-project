@@ -6,3 +6,4 @@
 2. yarn global add bower = bower 설치
 
 수정중일세~~
+222222
