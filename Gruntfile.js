@@ -31,6 +31,37 @@ module.exports = function (grunt) {
 				ignorePath: /^(\/|\.+(?!\/[^\.]))+\.+/,
 				dependencies: true,
 				devDependencies: true
+			},
+			options: {
+				overrides: {
+					"jquery": {
+						"main": [
+							"dist/*.min.js"
+						]
+					},
+					"jquery-easing": {
+						"main": [
+							"*.min.js"
+						]
+					},
+					"bootstrap": {
+						"main": [
+							"dist/js/bootstrap.bundle.min.js"
+						]
+					},
+					"fontawesome": {
+						"main": [
+							"css/all.min.css",
+							"css/fontawesome.min.css"
+						]
+					},
+					"select2": {
+						"main": [
+							"dist/css/select2.min.css",
+							"dist/js/select2.min.js"
+						]
+					}
+				}
 			}
 		},
 
