@@ -166,9 +166,7 @@ module.exports = function (grunt) {
 			// },
 			js: {
 				"files": {
-					'dist/js/modules.js': 'src/js/modules.js',
-					'dist/js/scrollSpy.js': 'src/js/scrollSpy.js',
-					'dist/js/scrollTop.js': 'src/js/scrollTop.js'
+					'dist/js/script.js': ['src/js/scroll-nav.js']
 				}
 			}
 		},
