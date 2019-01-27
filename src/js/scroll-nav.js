@@ -1,23 +1,21 @@
-// Scrolling Nav link Trigger.
+// 네비게이션 버튼 트리거, 부드러운 스크롤 효과
 $(".navbar-nav li a[href^='#']").on('click', function(e) {
-	// prevent default anchor click behavior
+	
 	e.preventDefault();
 
 	// animate
 	$('html, body').animate({
 		scrollTop: $(this.hash).offset().top
 	  }, 300, function(){
-
-		// when done, add hash to url
-		// (default click behaviour)
 		window.location.hash = this.hash;
 	  });
+
  });
 
 
 
 
-// scrolling Nav Toggle Class
+// 네비게이션 스크롤시 클래스(효과) 추가
 $(function () {
 	$(document).scroll(function(){
 		var $topNav = $(".topNav");

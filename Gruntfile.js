@@ -129,7 +129,7 @@ module.exports = function (grunt) {
 			// },
 			js: {
 				"files": {
-					'dist/js/script.js': ['src/js/scroll-nav.js']
+					'dist/js/script.js': ['src/js/*.js']
 				}
 			}
 		},
