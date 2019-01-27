@@ -24,43 +24,6 @@ module.exports = function (grunt) {
 		},
 
 
-		// Bower install 시, 자동 삽입
-		wiredep: {
-			target: {
-				// run `grunt wiredep`
-				src: ['src/**/*.html'],
-				ignorePath: /^(\/|\.+(?!\/[^\.]))+\.+/,
-				dependencies: true,
-				devDependencies: true
-			},
-			options: {
-				overrides: {
-					"jquery": {
-						"main": [
-							"dist/*.min.js"
-						]
-					},
-					"jquery-easing": {
-						"main": [
-							"*.min.js"
-						]
-					},
-					"bootstrap": {
-						"main": [
-							"dist/js/bootstrap.min.js"
-						]
-					},
-					"fontawesome": {
-						"main": [
-							"css/all.min.css",
-							"css/fontawesome.min.css"
-						]
-					}
-				}
-			}
-		},
-
-
 		// include HTML
 		includereplace: {
 			dist: {
@@ -213,7 +176,7 @@ module.exports = function (grunt) {
 			},
 			html: {
 				files: ['**/*.html'],
-				tasks: ['includereplace','wiredep']
+				tasks: ['includereplace']
 			},
 			livereload: {
 				files: [
@@ -237,6 +200,6 @@ module.exports = function (grunt) {
 	// grunt 명령어로 실행할 작업
 	grunt.registerTask('mdz', ['modernizr']);
 	grunt.registerTask('include', ['includereplace', 'watch']);
-	grunt.registerTask('build', ['wiredep', 'includereplace', 'imagemin', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'watch']);
+	grunt.registerTask('build', ['includereplace', 'imagemin', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'watch']);
 
 };
