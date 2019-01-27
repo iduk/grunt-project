@@ -11145,12 +11145,11 @@ a.text-dark:hover, a.text-dark:focus {
  *
  */
 .topNav {
-  background: #fff;
   z-index: 10;
 }
 
 .topNav.scrolled {
-  background: #51b1ff;
+  background: rgba(0, 0, 0, 0.7);
   -webkit-transition: background-color 200ms linear;
   -o-transition: background-color 200ms linear;
   transition: background-color 200ms linear;

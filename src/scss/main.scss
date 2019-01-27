@@ -13,12 +13,11 @@ $theme-colors: ("primary": #51b1ff, "warning": #ebe726, "danger": #F67280, "dark
 
 // top Nav
 .topNav {
-    background: #fff;
     z-index: 10;
 }
 
 .topNav.scrolled {
-	background: #51b1ff;
+	background: rgba(000, 000, 000, 0.7);
 	transition: background-color 200ms linear;
 }
 

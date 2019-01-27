@@ -1,11 +1,12 @@
-function parseFunction(source) {
-	return source.replace(/\{\{\s?([\.\-\w]*)\s?\}\}/g, function () {
-		return "";
-	});
-}
-
 module.exports = function (grunt) {
 	'use strict';
+
+	// Force use of Unix newlines
+	grunt.util.linefeed = '\n';
+
+	RegExp.quote = function (string) {
+		return string.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+	};
 
 	// 자동으로 grunt 태스크를 로드 , grunt.loadNpmTasks를 생략함
 	require('load-grunt-tasks')(grunt);
@@ -46,7 +47,7 @@ module.exports = function (grunt) {
 					},
 					"bootstrap": {
 						"main": [
-							"dist/js/bootstrap.bundle.min.js"
+							"dist/js/bootstrap.min.js"
 						]
 					},
 					"fontawesome": {
@@ -54,14 +55,26 @@ module.exports = function (grunt) {
 							"css/all.min.css",
 							"css/fontawesome.min.css"
 						]
-					},
-					"select2": {
-						"main": [
-							"dist/css/select2.min.css",
-							"dist/js/select2.min.js"
-						]
 					}
 				}
+			}
+		},
+
+
+		// include HTML
+		includereplace: {
+			dist: {
+				options: {
+					prefix: '<!-- @@',
+					suffix: ' -->',
+					includesDir: 'src/include/' // 상대경로
+				},
+				files: [{
+					expand: true,
+					cwd: 'src/', // 기존 경로
+					src: '*.html',
+					dest: 'dist/' // 컴파일 경로
+				}]
 			}
 		},
 
@@ -72,7 +85,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'src/images',
-					src: ['**/*.{png,jpg,gif}'],
+					src: ['**/*.{png,jpg,jpeg,gif}'],
 					dest: 'dist/images'
 				}]
 			}
@@ -133,55 +146,55 @@ module.exports = function (grunt) {
 		},
 
 
-		// Concat 파일 합치기
-		// concat: {
-		// 	css: {
-		// 		src: ['src/css/main.css'],
-		// 		dest: 'dist/css/main.css'
-		// 	},
-		// 	js: {
-		// 		src: ['src/js/main.js'],
-		// 		dest: 'dist/js/main.js'
-		// 	}
-		// },
-		
-		
 		// Jshint 자바스크립트 검사
 		jshint: {
-			files: ['Gruntfile.js', 'src/**/*.js', '!**/*.min.js'],
 			options: {
 				reporter: require('jshint-stylish')
-			}
-		},
-
-
-		// uglify, JS 파일 최적화
-		uglify: {
-			compress: {
-				files: {
-					'dist/js/script.min.js': ['src/js/scrollSpy.js', 'src/js/scrollTop.js', 'src/js/modules.js']
-				}
 			},
-			options: {
-				mangle: false
+			globals: {
+				jQuery: true
+			},
+			target: ['Gruntfile.js', 'package.json', '!src/**/*.js']
+		},
+
+
+		// Concat 파일 합치기
+		concat: {
+			// css: {
+			// 	src: ['src/css/main.css'],
+			// 	dest: 'dist/css/main.css'
+			// },
+			js: {
+				"files": {
+					'dist/js/modules.js': 'src/js/modules.js',
+					'dist/js/scrollSpy.js': 'src/js/scrollSpy.js',
+					'dist/js/scrollTop.js': 'src/js/scrollTop.js'
+				}
 			}
 		},
 
 
-		// include
-		includereplace: {
+		// Modernizr 코드 호환 검사
+		modernizr: {
 			dist: {
-				options: {
-					prefix: '<!-- @@',
-					suffix: ' -->',
-					includesDir: 'src/include/' // 상대경로
-				},
-				files: [{
-					expand: true,
-					cwd: 'src/', // 기존 경로
-					src: '*.html',
-					dest: 'dist/' // 컴파일 경로
-				}]
+				"cache": true,
+				"devFile": false,
+				"dest": false,
+				"options": [
+					"setClasses",
+					"addTest",
+					"html5shiv",
+					"testProp"
+				],
+				"uglify": true,
+				"customTests": [],
+				"files": {
+					"src": [
+						"*[^(g|G)runt(file)?].{js,css,scss}",
+						"**[^node_modules]/**/*.{js,css,scss}",
+						"!lib/**/*"
+					]
+				}
 			}
 		},
 
@@ -198,11 +211,11 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: ['Gruntfile.js', 'src/**/*.js', 'dist/**/*.js'],
-				tasks: ['jshint:files', 'uglyfy']
+				tasks: ['jshint', 'concat:js']
 			},
 			html: {
 				files: ['**/*.html'],
-				tasks: ['includereplace']
+				tasks: ['includereplace','wiredep']
 			},
 			livereload: {
 				files: [
@@ -224,7 +237,8 @@ module.exports = function (grunt) {
 	// ]);
 
 	// grunt 명령어로 실행할 작업
+	grunt.registerTask('mdz', ['modernizr']);
 	grunt.registerTask('include', ['includereplace', 'watch']);
-	grunt.registerTask('build', ['imagemin', 'sass', 'postcss', 'cssmin', 'jshint:files', 'uglify', 'includereplace', 'watch']);
+	grunt.registerTask('build', ['wiredep', 'includereplace', 'imagemin', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'watch']);
 
 };
