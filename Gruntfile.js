@@ -55,6 +55,14 @@ module.exports = function (grunt) {
 		},
 
 
+		// Fonts 가져오기
+		embedFonts: {
+			files: {
+				'dist/css/fonts.css': ['src/css/fonts.css']
+			}
+		},
+
+
 		// Sass
 		sass: {
 			options: {
@@ -200,6 +208,6 @@ module.exports = function (grunt) {
 	// grunt 명령어로 실행할 작업
 	grunt.registerTask('mdz', ['modernizr']);
 	grunt.registerTask('include', ['includereplace', 'watch']);
-	grunt.registerTask('build', ['includereplace', 'imagemin', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'watch']);
+	grunt.registerTask('build', ['includereplace', 'imagemin', 'embedFonts', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'modernizr', 'watch']);
 
 };

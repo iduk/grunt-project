@@ -23,6 +23,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-embed-fonts": "^1.0.0",
     "grunt-include-replace": "^5.0.0",
     "grunt-modernizr": "^1.0.3",
     "grunt-postcss": "^0.9.0",

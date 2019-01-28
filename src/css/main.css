@@ -9515,6 +9515,15 @@ a.text-dark:hover, a.text-dark:focus {
  * new css
  *
  */
+body {
+  font-family: 'SamsungOne', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
 .topNav {
   z-index: 10;
 }

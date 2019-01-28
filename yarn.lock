@@ -1663,6 +1663,13 @@ grunt-contrib-watch@^1.1.0:
     lodash "^4.17.10"
     tiny-lr "^1.1.1"
 
+grunt-embed-fonts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/grunt-embed-fonts/-/grunt-embed-fonts-1.0.0.tgz#0acb00f876101d5b1327603ff25365525bb9b737"
+  integrity sha512-UamMOi2D4WfRFRh+SGX+0H8QWrjSIevIkg+hzCcfzG2P9ZL2DyTqY1BXRS1etiBOFJtXeB/x5EIQrDEI5o3sKQ==
+  dependencies:
+    path-is-absolute "^1.0.1"
+
 grunt-include-replace@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/grunt-include-replace/-/grunt-include-replace-5.0.0.tgz#09539163b1681a6c5609106954504e1c1a66e077"
@@ -2999,7 +3006,7 @@ path-exists@^3.0.0:
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-3.0.0.tgz#ce0ebeaa5f78cb18925ea7d810d7b59b010fd515"
   integrity sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=
 
-path-is-absolute@^1.0.0, path-is-absolute@~1.0.0:
+path-is-absolute@^1.0.0, path-is-absolute@^1.0.1, path-is-absolute@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
   integrity sha1-F0uSaHNVNP+8es5r9TpanhtcX18=

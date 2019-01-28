@@ -1,15 +1,34 @@
 // grid enable
 $enable-grid-classes:true;
-// replace colors
-$theme-colors: ("primary": #51b1ff, "warning": #ebe726, "danger": #F67280, "dark": #151629, "light": #f7faff, );
+$theme-colors: (
+    "primary": #51b1ff, 
+    "warning": #ebe726, 
+    "danger": #F67280, 
+    "dark": #151629, 
+    "light": #f7faff
+    );
+
 // Include all of Bootstrap
 @import "../../bower_components/bootstrap/scss/bootstrap";
+
 // 여기부터 색상은 기존 부트스트랩 색상으로 먹힌다. 원인찾기! //
+
+
 /**
  *
  * new css
  *
  */
+
+
+// body 
+body {
+    font-family: 'SamsungOne', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+}
 
 // top Nav
 .topNav {
@@ -17,8 +36,8 @@ $theme-colors: ("primary": #51b1ff, "warning": #ebe726, "danger": #F67280, "dark
 }
 
 .topNav.scrolled {
-	background: rgba(000, 000, 000, 0.7);
-	transition: background-color 200ms linear;
+    background: rgba(000, 000, 000, 0.7);
+    transition: background-color 200ms linear;
 }
 
 @media (min-width: 992px) {
