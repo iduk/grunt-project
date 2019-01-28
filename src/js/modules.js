@@ -13,7 +13,20 @@ $(function () {
 });
 
 
-// Scroll Magic
+// wow.js 
+$(".wow").each(function () {
+	var wowHeight = $(this).height();
+	$(this).attr("data-wow-offset", wowHeight);
+});
+
+wow = new WOW({
+	boxClass: 'wow', // default
+	animateClass: 'animated', // default
+	offset: 0, // default
+	mobile: true, // default
+	live: true // default
+});
+wow.init();
 
 
 
@@ -24,6 +37,4 @@ $(function () {
 
 
 
-
-
-console.log('modules.js ==> ok!');
+console.log('pakages modules ==> ok!');

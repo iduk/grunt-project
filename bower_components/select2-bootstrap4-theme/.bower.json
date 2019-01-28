@@ -38,6 +38,7 @@
     "commit": "3ba799bd4fe47dbbd1e921c488a60e0e37c8106f"
   },
   "_source": "https://github.com/berkan52/select2-bootstrap4-theme.git",
-  "_target": "*",
-  "_originalSource": "select2-bootstrap4-theme"
+  "_target": "^2.0.0",
+  "_originalSource": "select2-bootstrap4-theme",
+  "_direct": true
 }

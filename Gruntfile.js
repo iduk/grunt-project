@@ -183,16 +183,19 @@ module.exports = function (grunt) {
 				tasks: ['jshint', 'concat:js']
 			},
 			html: {
-				files: ['**/*.html'],
-				tasks: ['includereplace']
+				files: ['src/**/*.html','dist/**/*.html'],
+				tasks: ['includereplace'],
+				options:{
+					livereload: true
+				}
 			},
-			livereload: {
+			livereload: 
+			{
 				files: [
 					'**/*.js',
 					'**/*.css',
 					'**/*.min.css',
-					'**/*.scss',
-					'**/*.html'
+					'**/*.scss'
 				]
 			}
 		}
