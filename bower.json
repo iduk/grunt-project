@@ -1,5 +1,5 @@
 {
-  "name": "atom-engineering",
+  "name": "Bower project",
   "description": "",
   "main": "src/index.html",
   "authors": [
@@ -22,8 +22,16 @@
   },
   "devDependencies": {
     "select2": "~4.0",
+    "select2-bootstrap4.min":"latest",
     "modernizr": "^3.6.0",
-    "jquery-easing": "*",
-    "dropzone": "dropzonejs#^4.3.0"
+    "jquery-easing": "latest",
+    "dropzone": "^4.3.0",
+    "popper.js":"latest",
+    "scrollme":"latest"
+  },
+  "exportsOverride": {
+    "scrollme": {
+      "main": "jquery.scrollme.min.js"
+    }
   }
 }

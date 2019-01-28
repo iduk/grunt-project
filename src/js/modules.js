@@ -1,7 +1,7 @@
 // Pakage Modules JS
 
 // Select2
-$(function(){
+$(function () {
 	$('select').each(function () {
 		$(this).select2({
 			theme: 'bootstrap4',
@@ -11,5 +11,19 @@ $(function(){
 		});
 	});
 });
+
+
+// Scroll Magic
+
+
+
+
+
+
+
+
+
+
+
 
 console.log('modules.js ==> ok!');

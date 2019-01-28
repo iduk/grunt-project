@@ -1,7 +1,7 @@
 // Pakage Modules JS
 
 // Select2
-$(function(){
+$(function () {
 	$('select').each(function () {
 		$(this).select2({
 			theme: 'bootstrap4',
@@ -11,6 +11,20 @@ $(function(){
 		});
 	});
 });
+
+
+// Scroll Magic
+
+
+
+
+
+
+
+
+
+
+
 
 console.log('modules.js ==> ok!');
 // 네비게이션 버튼 트리거, 부드러운 스크롤 효과
