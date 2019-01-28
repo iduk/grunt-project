@@ -1,9 +1,11 @@
 # Bower + Grunt Project
 - Bower와 Grunt를 활용한 프로젝트
 
-## 활용
-1. npm & yarn install ==> "yarn" 이 더 빠름
-2. yarn global add bower = bower 설치
+## Base
+- npm & yarn install ==> 나는 "yarn"
+- yarn global add bower = bower 설치
+- yarn global add grunt-cli
+- yarn global node-sass
 
-수정중일세~~
-222222
+## Plugin add
+## Warning
