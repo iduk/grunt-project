@@ -11,7 +11,6 @@
 	(이미 설치되어있으면 건너뛰기)
 	
 	yarn install
-	bower init
 	bower install
 	yarn build
 	yarn open
