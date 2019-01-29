@@ -1,13 +1,26 @@
 # .gitignore
+.sass-cache
+.vscode
+.git
+
+
+######################
+# Folders #
 bower_components
 dist
 node_modules
 src
-app.js
-yarn.lock
-.sass-cache
 
 
 ######################
 # OS generated files #
 .DS_Store*
+
+
+######################
+# 아래 명령 실행 시, 기존에 원격 저장소에 적용된 파일들이 사라짐 #
+######################
+# $ git rm -r --cached .
+# $ git add .
+# $ git commit -m "Apply .gitignore"
+# $ git push
