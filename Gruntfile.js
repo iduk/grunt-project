@@ -213,11 +213,10 @@ module.exports = function (grunt) {
 		'cssmin', 
 		'jshint', 
 		'concat:js', 
-		'modernizr', 
-		'watch'
+		'modernizr'
 	]);
 
 	// Build
-	grunt.registerTask('build', ['includereplace', 'imagemin', 'embedFonts', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'modernizr']);
+	grunt.registerTask('watch', ['includereplace', 'imagemin', 'embedFonts', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'modernizr', 'watch']);
 
 };
