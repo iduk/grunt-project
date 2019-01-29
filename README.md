@@ -3,7 +3,7 @@
 
 	*** 터미널을 연 후 순서대로 붙여넣기 ***
 
-	$ git clone git@github.com:iduk/grunt-project.git
+	git clone git@github.com:iduk/grunt-project.git
 
 	cd grunt-project
 
