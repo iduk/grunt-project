@@ -4,14 +4,14 @@
 	*** 터미널을 연 후 순서대로 붙여넣기 ***
 
 	$ git clone git@github.com:iduk/grunt-project.git
+	=> 프로젝트 git경로 붙여넣기
 	
 	npm install yarn -g
+	=> npm으로 yarn 설치, yarn이 더 빠르니까
 	
 	yarn install
-	
 	bower init
 	bower install
-	
 	yarn build
 	yarn open
 
