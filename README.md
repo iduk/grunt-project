@@ -1,5 +1,5 @@
 # Bower + Grunt Project
-#### Bower와 Grunt를 활용한 프로젝트
+#### git 주소복사
 
 	git clone git@github.com:iduk/grunt-project.git
 
@@ -11,7 +11,7 @@
 	yarn global node-sass --save
 
 
-## *Node Modules
+## *Node Using
 #### dependencies
 	bower
 	grunt-cli
@@ -35,7 +35,7 @@
 	load-grunt-tasks
 
 
-## Bower list
+## Bower Using
 #### dependencies
 	jquery
 	bootstrap
