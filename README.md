@@ -5,11 +5,16 @@
 
 	$ git clone git@github.com:iduk/grunt-project.git
 	
-	$ npm or yarn install
-	$ yarn install
-	$ bower init
-	$ yarn build
-	$ yarn open
+	npm install yarn -g
+	
+	yarn install
+	
+	bower init
+	bower install
+	
+	yarn build
+	yarn open
+
 
 ## *Node 내역
 #### dependencies
