@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-
+		
 		// clean 파일,폴더 삭제
 		clean: {
 			dist: {
