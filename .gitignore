@@ -5,6 +5,7 @@ node_modules
 src
 app.js
 yarn.lock
+.sass-cache
 
 
 ######################
