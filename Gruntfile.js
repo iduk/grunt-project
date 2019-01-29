@@ -217,6 +217,7 @@ module.exports = function (grunt) {
 	]);
 
 	// Build
-	grunt.registerTask('watch', ['includereplace', 'imagemin', 'embedFonts', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'modernizr', 'watch']);
+	grunt.registerTask('watch', ['watch']);
+	grunt.registerTask('build', ['includereplace', 'imagemin', 'embedFonts', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'modernizr']);
 
 };
