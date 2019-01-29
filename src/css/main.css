@@ -9516,10 +9516,11 @@ a.text-dark:hover, a.text-dark:focus {
  *
  */
 body {
-  font-family: 'SamsungOne', sans-serif !important;
+  font-family: 'Sunflower', sans-serif !important;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+Sunflower
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
