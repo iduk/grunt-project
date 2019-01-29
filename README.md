@@ -1,17 +1,17 @@
 # Bower + Grunt Project
-#### git 주소복사
+#### Terminal Setting.
 
-	git clone git@github.com:iduk/grunt-project.git
+	*** 터미널을 연 후 순서대로 붙여넣기 ***
 
+	$ git clone git@github.com:iduk/grunt-project.git
+	
+	$ npm or yarn install
+	$ yarn install
+	$ bower init
+	$ yarn build
+	$ yarn open
 
-## *Base install
-	yarn install
-	yarn global add bower --save
-	yarn global add grunt-cli --save
-	yarn global node-sass --save
-
-
-## *Node Using
+## *Node 내역
 #### dependencies
 	bower
 	grunt-cli
@@ -35,7 +35,7 @@
 	load-grunt-tasks
 
 
-## Bower Using
+## Bower 내역
 #### dependencies
 	jquery
 	bootstrap
