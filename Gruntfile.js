@@ -204,13 +204,20 @@ module.exports = function (grunt) {
 
 
 	// plugin's task(s), then test the result.
-	// grunt.task.run([
-	// 	'watch'
-	// ]);
+	grunt.task.run([
+		'includereplace', 
+		'imagemin', 
+		'embedFonts', 
+		'sass', 
+		'postcss', 
+		'cssmin', 
+		'jshint', 
+		'concat:js', 
+		'modernizr', 
+		'watch'
+	]);
 
-	// grunt 명령어로 실행할 작업
-	grunt.registerTask('mdz', ['modernizr']);
-	grunt.registerTask('include', ['includereplace', 'watch']);
-	grunt.registerTask('build', ['includereplace', 'imagemin', 'embedFonts', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'modernizr', 'watch']);
+	// Build
+	grunt.registerTask('build', ['includereplace', 'imagemin', 'embedFonts', 'sass', 'postcss', 'cssmin', 'jshint', 'concat:js', 'modernizr']);
 
 };
